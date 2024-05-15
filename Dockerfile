@@ -16,4 +16,4 @@ RUN pip install openpyxl
 EXPOSE 8050
 
 # Command to run the Dash app using Gunicorn
-CMD exec gunicorn --bind :8050 app:server
+CMD ["gunicorn", "--bind", "0.0.0.0:8050", "app:server"]
