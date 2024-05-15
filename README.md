@@ -18,12 +18,12 @@ cd aplikace_bp
 1. K použití je nutné mít nainstalovaný Docker, pokud ho nemáte, nainstalujte si ho [zde](https://docs.docker.com/desktop/)
 2. Vytvořte Docker Image:
 ```
-docker build -t aplikace_bp .
+docker build -t expert_analysis_app .
 ```
 3. Vyčkejte dokud se nevytvoří Docker Image. Tento krok může nějaký čas trvat
 4. Jakmile je Docker Image vytvořený, můžete spustit Docker container:
 ```
-docker run -p 8050:8050 aplikace_bp
+docker run -p 8050:8050 expert_analysis_app
 ```
 5. Otevřete webový prohlížeč na adrese http://127.0.0.1:8050 nebo http://localhost:8050
 pozn. aplikace byla vytvořena pro prohlížeč Google Chrome, v ostatních prohlížečích je aplikaci možné otevřít, 
