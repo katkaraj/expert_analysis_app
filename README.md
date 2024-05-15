@@ -88,7 +88,7 @@ stisknutím tlačítka "Export selected to excel"
 ## Vizualizace dat pomocí grafů
 
 1. Nejprve uživatel vybere studii se kterou chce pracovat v rozbalovacím menu (**číslo 1**)
-2. Dále zvolí příslušné filtry
+2. Dále zvolí příslušné filtry (**číslo 2**)
 - U každého grafu je dále vykreslena na pravé straně legenda
 - všechny grafy jsou interaktivní
 - po nasměrování kurzoru na barevné pole lze zobrazit
