@@ -99,6 +99,7 @@ def graph_callbacks(app):
                                       hoverinfo='text',
                                       textinfo='value+percent',
                                       marker=dict(colors=['DodgerBlue', 'FireBrick']))])
+        figg.update_layout(title_text="Number of patients by sex")
         return figg
 
     # zobrazení grafu podle věku

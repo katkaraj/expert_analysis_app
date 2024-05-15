@@ -20,7 +20,7 @@ def search_callbacks(app):
         patient_code = cur.fetchone()[0]
         search_pat = f"SELECT idpacient, rc, prestavba, narozen, jmeno, prijmeni, diagnoza FROM pacient WHERE idpacient = ?"
         df_pat = pd.read_sql(search_pat, conn, params=[patient_code])
-        df_pat = df_pat.rename(columns={'idpacient': 'Patient ID', 'rc': 'Insurance number', 'prestavba': 'Conversion',
+        df_pat = df_pat.rename(columns={'idpacient': 'Patient ID', 'rc': 'Insurance number', 'prestavba': 'Breakpoint',
                                         'narozen': 'Date of birth', 'jmeno': 'First name', 'prijmeni': 'Last name',
                                         'diagnoza': 'Diagnosis'})
 

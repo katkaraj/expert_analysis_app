@@ -1,5 +1,9 @@
 # Aplikace pro expertní analýzu genetických dat
+Toto je stránka, která slouží jako repozitář pro bakalářskou práci s názvem
+"Vytvoření nástroje pro analýzu a uchování výsledků z panelového sekvenování nové generace u pacientů
+s leukemickými onemocněními".  
 
+**Repozitář neobsahuje žádná reálná data pacientů, všechna data jsou anonymizovaná nebo zcela fiktivní.**
 ## Spuštění splikace
 
 ### Naklonování repozitáře
@@ -38,7 +42,10 @@ ale není zaručena správná funkčnost všech komponent.
 **Číslo 1** na obrázku  
 
 Report lze nahrát přetažením ("drag and drop") zvoleného souboru, nebo stiknutím pole 
-"Drag and Drop or Select Files" a následný výběr souboru v počítači.
+"Drag and Drop or Select Files" a následný výběr souboru v počítači.  
+
+V repozitáři se nachází ukázkový soubor "AB714-Mutation_Report1.txt", tento soubor lze stáhnout do počítače 
+a následně nahrát do aplikace.
 
 ### Vyhledání a otevření reportu
 
@@ -52,7 +59,7 @@ Seznam reportů:
 - CD821
 - AL123
 
-1. Uživatel zadá do pole kód reportu
+1. Uživatel zadá do pole kód reportu (Ukázkové reporty jsou v seznamu výše)
 2. Stisknutím tlačítka Open se otevře report i s pacientskými údaji v části označené na obrázku **číslem 3**
    (Pokud zadá uživatel neexistující kód, aplikace ho na to upozorní)
 3. Report se pod svým názvem otevře jako záložka (označeno **číslem 4**)  
