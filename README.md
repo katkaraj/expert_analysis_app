@@ -79,10 +79,19 @@ databázi genetických variant GeneBe.
 1. Uživatel zvolí klasifikaci z rozbalovací nabídky přímo v buňce tabulky, nebo ji dovnitř napíše a potvrdí Enter
 2. Takto klasifikuje všechny potřebné varianty
 3. Tlačítkem "Save work" uloží práci
-4. 
+4. Tlačítkem "Export all to excel" má uživatel možnost exportovat celou tabulku - 
+po stisknutí tlačítka začne stahování
+5. Dále lze exportovat jen vybrané vyrianty zaškrtnutím příslušných políček a 
+stisknutím tlačítka "Export selected to excel"
+
+!['Screen4'](imgs/img4.png)
 ## Vizualizace dat pomocí grafů
 
-### 
-
+1. Nejprve uživatel vybere studii se kterou chce pracovat v rozbalovacím menu (**číslo 1**)
+2. Dále zvolí příslušné filtry
+- U každého grafu je dále vykreslena na pravé straně legenda
+- všechny grafy jsou interaktivní
+- po nasměrování kurzoru na barevné pole lze zobrazit
+podrobné informace
 
 !['Screen3'](imgs/img3.png)

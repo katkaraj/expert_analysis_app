@@ -1,5 +1,5 @@
 # import balíčků
-from dash import dcc, Input, Output, callback
+from dash import dcc, Input, Output
 import sqlite3
 import plotly.express as px
 import plotly.graph_objects as go
@@ -94,13 +94,12 @@ def graph_callbacks(app):
         df_counts = df_new['Sex'].value_counts().reset_index()
         df_counts.columns = ['Sex', 'Number of Patients']
 
-        fig = go.Figure(data=[go.Pie(labels=df_counts['Sex'],
+        figg = go.Figure(data=[go.Pie(labels=df_counts['Sex'],
                                       values=df_counts['Number of Patients'],
                                       hoverinfo='text',
                                       textinfo='value+percent',
                                       marker=dict(colors=['DodgerBlue', 'FireBrick']))])
-        fig.update_layout(title_text = 'Number of patients by sex')
-        return fig
+        return figg
 
     # zobrazení grafu podle věku
     @app.callback(
