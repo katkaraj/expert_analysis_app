@@ -1,0 +1,31 @@
+# Python-related
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+.env/
+
+# IDE-related
+.idea/
+
+# Logs
+*.log
+
+# Editor backup files
+*~
+
+# Compiled Python files
+*.pyc
+
+# Cache directories
+.cache/
+
+# Environment variables or secrets
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# System or hidden files
+.DS_Store

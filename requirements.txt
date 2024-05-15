@@ -1,0 +1,7 @@
+dash~=2.15.0
+dash_bootstrap_components==1.5.0
+dash_mantine_components==0.12.0
+genebe==0.0.17
+pandas
+plotly~=5.18.0
+gunicorn

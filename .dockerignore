@@ -1,0 +1,25 @@
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore Python cache directories
+__pycache__
+
+# Ignore local development files
+*.log
+.DS_Store
+.idea/
+
+# Ignore virtual environment directories
+venv/
+.env
+
+# Ignore any build artifacts or temporary files
+/build
+*.swp
+
+# Ignore any sensitive or confidential files
+secrets/
+credentials.json
+
+# Ignore any files or directories specific to your local environment
+config.yaml
