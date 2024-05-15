@@ -7,11 +7,11 @@
 1. Pomocí tlačítka "Code" zkopírujte adresu repozitáře
 2. V terminálu/příkazové řádce naklonujte repozitář:
 ```
-git clone https://github.com/katkaraj/aplikace_bp.git
+git clone https://github.com/katkaraj/expert_analysis_app.git
 ```
 3. Přejďete do naklonovaného repozitáře:
 ```
-cd aplikace_bp
+cd expert_analysis_app
 ```
 
 ### Vytvoření Docker Image
