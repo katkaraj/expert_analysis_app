@@ -84,7 +84,7 @@ graph_mut_age_card = dbc.Card([
                  )], className='p-2 mb-3')
 
 graph_disease_card = dbc.Card([
-    dbc.CardHeader('Number of mutations in gene'),
+    dbc.CardHeader('Number of patients by disease'),
     dbc.CardBody(dcc.Graph(id='dis_graph')
                  )], className='p-2 mb-3')
 

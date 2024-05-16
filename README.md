@@ -75,7 +75,8 @@ Tyto informace lze zobrazit stisknutím rozbalovací lišty s názvem "Patient i
 Tabulka, ve které se nachází report s hodnocením variant se nachází v liště "Report table"  
 
 - Nejprve je zobrazeno upozornění, pokud má pacient další vyšetření. V rámečku
-jsou zobrazeny kódy dalších reportů
+jsou zobrazeny kódy dalších reportů (s ohledem na velikost souborů bylo do databáze nahráno jen
+6 souborů, které jsou zmíněny výše)
 - Další upozornění vypisuje indexy variant, u kterých se liší klasifikace oproti klasifikaci v 
 databázi genetických variant GeneBe.
 - Další částí je legenda k podbarvení řádků tabulky
