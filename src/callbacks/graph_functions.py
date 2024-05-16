@@ -212,3 +212,45 @@ def graph_callbacks(app):
         fig1.update_layout(plot_bgcolor='white', paper_bgcolor='white', font=dict(color="black"))
 
         return fig, fig1
+
+    @app.callback(
+        Output('dis_graph', 'figure'),
+        Input('dropdown_study', 'value'),
+        Input('m_f_checklist', 'value'),
+        Input('age_checklist', 'value')
+    )
+    def upgrade_graph_disease(study, sex, age):
+        conn = sqlite3.connect('src/database/appDB.sqlite')
+        query = f"""
+               SELECT o.nazev AS Disease,
+                   CASE 
+                       WHEN substr(p.rc, 3, 1) IN ('5', '6') THEN 'Female'
+                       ELSE 'Male'
+                   END AS Sex,
+                   CASE
+                       WHEN strftime('%Y', 'now') - substr(p.narozen, -4) <= 17 THEN 'Children'
+                       WHEN strftime('%Y', 'now') - substr(p.narozen, -4) BETWEEN 18 AND 39 THEN 'AYAs'
+                       ELSE 'Elderly'
+                   END AS Age_Check
+               FROM pacient p
+               INNER JOIN onemocneni o ON p.onemocneni_idonemocneni = o.idonemocneni
+               INNER JOIN studie s ON p.idpacient = s.pacient_idpacient
+               INNER JOIN studie_enum se ON s.studie_enum_idstudie = se.idstudie
+               WHERE se.nazev = '{study}'
+           """
+        df = pd.read_sql(query, conn)
+        conn.close()
+
+        if sex:
+            df = df[df['Sex'].isin(sex)]
+        if age:
+            df = df[df['Age_Check'].isin(age)]
+
+        patient_count = df.groupby(['Disease', 'Sex', 'Age_Check']).size().reset_index(name='Number of Patients')
+        fig = px.bar(patient_count, x='Disease', y='Number of Patients', color='Sex', barmode='group',
+                     title=f'Number of patients by disease in {study}',
+                     color_discrete_map={'Female': 'FireBrick', 'Male': 'DodgerBlue'})
+        fig.update_layout(plot_bgcolor='white', paper_bgcolor='white', font=dict(color="black"))
+
+        return fig
+
