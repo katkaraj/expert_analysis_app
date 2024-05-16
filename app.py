@@ -18,6 +18,7 @@ from src.callbacks.search_functions import search_callbacks
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SPACELAB])
 server = app.server
 
+# layout aplikace
 app.layout = dbc.Container([
     dbc.Row(header),
     dbc.Row([dbc.Col(upload_card), dbc.Col(search_card)]),
@@ -30,9 +31,11 @@ app.layout = dbc.Container([
     dbc.Row(footer),
 ])
 
+# předání app callbackům
 graph_callbacks(app)
 upload_callbacks(app)
 search_callbacks(app)
 
+# spuštění aplikace
 if __name__ == '__main__':
     app.run_server(debug=True, port=8050)

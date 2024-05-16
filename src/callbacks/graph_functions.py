@@ -5,8 +5,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 
-
+# funkce pro vytvoření jednotlivých gafů
 def graph_callbacks(app):
+    # zobrazení grafu podle data diagnózy
     @app.callback(
         Output('diagnosis_age_graph', 'figure'),
         Input('dropdown_study', 'value'),
@@ -153,6 +154,7 @@ def graph_callbacks(app):
 
         return fig
 
+    # zobrazení grafu podle mutací v genu
     @app.callback(
         Output('mut_graph', 'figure'),
         Output('mut_graph1', 'figure'),
@@ -212,7 +214,7 @@ def graph_callbacks(app):
         fig1.update_layout(plot_bgcolor='white', paper_bgcolor='white', font=dict(color="black"))
 
         return fig, fig1
-
+    #zobrazen grafu podle onemocnění pacienta
     @app.callback(
         Output('dis_graph', 'figure'),
         Input('dropdown_study', 'value'),
@@ -253,4 +255,3 @@ def graph_callbacks(app):
         fig.update_layout(plot_bgcolor='white', paper_bgcolor='white', font=dict(color="black"))
 
         return fig
-

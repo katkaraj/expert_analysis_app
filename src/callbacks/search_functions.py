@@ -76,6 +76,7 @@ def search_callbacks(app):
             df.insert(3, "HGVS notation", variants_list)
         return df, df1
 
+    # otevření varianty na webu genebe
     @app.callback(
         Output({'type': 'output', 'index': MATCH}, 'children'),
         Input({'type': 'table', 'index': MATCH}, 'active_cell'),
@@ -92,6 +93,7 @@ def search_callbacks(app):
             webbrowser.open_new_tab(link)
         return ''
 
+    # funkce pro podbarvení řádků v excelovém souboru
     def style_excel(row):
         value = row.loc['Classification']
         if value == 'Uncertain significance':
@@ -107,6 +109,7 @@ def search_callbacks(app):
 
         return ['background-color: {}'.format(color) for r in row]
 
+    # funkce pro expport vybraných řádků reportu
     @app.callback(
         Output({'type': 'export_download', 'index': MATCH}, 'data'),
         Input({'type': 'export_button', 'index': MATCH}, 'n_clicks'),
@@ -126,6 +129,7 @@ def search_callbacks(app):
             df_rows_color.to_excel(path, index=False)
             return dcc.send_file(path)
 
+    # funkce pro export celé tabulky reportu
     @app.callback(
         Output({'type': 'export_all_download', 'index': MATCH}, 'data'),
         Input({'type': 'export_all_button', 'index': MATCH}, 'n_clicks'),
@@ -142,6 +146,7 @@ def search_callbacks(app):
             df_all_color.to_excel(path_all, index=False)
             return dcc.send_file(path_all)
 
+    # funkce pro uložení mutovaných variant do databáze mutací
     def save_variant_to_db(df, kod):
         conn = sqlite3.connect('src/database/appDB.sqlite')
         cur = conn.cursor()
@@ -187,6 +192,7 @@ def search_callbacks(app):
         conn.commit()
         conn.close()
 
+    #funkce pro uložení změn v tabulce
     @app.callback(
         Output({'type': 'save_message', 'index': MATCH}, 'children'),
         Input({'type': 'save_button', 'index': MATCH}, 'n_clicks'),
@@ -202,6 +208,7 @@ def search_callbacks(app):
             save_to_dir(df, name)
             return dmc.Alert('Report was saved', duration=5000, color='green')
 
+    # funkce pro vypsání indexů na kterých se liší klasifikace
     def classification_alert(df):
         compare = ((df['Classification'].isin(['Benign', 'Likely_benign'])) & df['Classification_genebe'].isin(
             ['Benign', 'Likely_benign'])) | \
@@ -220,6 +227,7 @@ def search_callbacks(app):
         else:
             return None
 
+    # zobrazení reportu v záložce
     def tab_content(report_number):
         df_patient, report_codes = search_patient(report_number)
         df, df_gnb = search_report(report_number)
@@ -314,6 +322,7 @@ def search_callbacks(app):
 
         return content
 
+    # otevření nové záložky
     @app.callback(
         Output('tabs', 'children'),
         Output('search_ex_alert','children'),

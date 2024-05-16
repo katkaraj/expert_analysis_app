@@ -83,6 +83,7 @@ graph_mut_age_card = dbc.Card([
     dbc.CardBody(dcc.Graph(id='mut_graph1')
                  )], className='p-2 mb-3')
 
+# zobrazení grafu s počtem pacientů s onemocněním
 graph_disease_card = dbc.Card([
     dbc.CardHeader('Number of patients by disease'),
     dbc.CardBody(dcc.Graph(id='dis_graph')
